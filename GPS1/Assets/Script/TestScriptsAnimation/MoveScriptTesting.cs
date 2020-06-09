@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class MoveScriptTesting : MonoBehaviour
 {
-    public float Speeds = 0.0f;
+    public float Speeds = 0.0f; //Speeds of character
 
-    public Animator animator;
+    public Animator animator; //Animation purpose
 
     // Start is called before the first frame update
     void Start()

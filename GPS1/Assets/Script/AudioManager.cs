@@ -6,13 +6,13 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public Sound[] sounds;
+    public Sound[] sounds; //Store Every Sounds, Refer Inspector
 
     public static AudioManager instance;
     // Start is called before the first frame update
     void Awake()
     {
-        if (instance == null)
+        if (instance == null) //For Multiple Scene Purpose
         {
             instance = this;
         }           
@@ -38,13 +38,13 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        //Play("StartMusic");
+        Play("StartMusic"); //Play BGM
     }
 
-    public void Play(string name)
+    public void Play(string name) //Play Sound source
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
-        if (s == null)
+        if (s == null) //Warning Debug
         {
             Debug.LogWarning("Sounds: " + name + " not found!");
             return;
@@ -52,14 +52,25 @@ public class AudioManager : MonoBehaviour
         s.source.Play();
     }
 
-    public void Pause(string name)
+    public void Pause(string name) //Pause Sound source
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
-        if (s == null)
+        if (s == null) //Warning Debug
         {
             Debug.LogWarning("Sounds: " + name + " not found!");
             return;
         }
         s.source.Pause();
+    }
+
+    public void Stop(string name) //Stop Sound source
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null) //Warning Debug
+        {
+            Debug.LogWarning("Sounds: " + name + " not found!");
+            return;
+        }
+        s.source.Stop();
     }
 }
