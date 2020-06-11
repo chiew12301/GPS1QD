@@ -5,7 +5,8 @@ using UnityEngine;
 public class MoveScriptTesting : MonoBehaviour
 {
     public float Speeds; //Speeds of character
-    [SerializeField] Transform target;
+    [SerializeField] Transform target = null;
+    public MouseCursor mcS;
     Vector3 targetPos;
     bool isMoving = false;
     bool isPlayed = false;
@@ -20,6 +21,8 @@ public class MoveScriptTesting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(Speeds);
+        Debug.Log(isMoving);
         animator.SetFloat("Speed", Mathf.Abs(Speeds));
 
         if (Input.GetMouseButtonDown(0))
@@ -68,5 +71,15 @@ public class MoveScriptTesting : MonoBehaviour
             Speeds = 0f;
             FindObjectOfType<AudioManager>().Pause("AudioTest");
         }
+    }
+
+    void OnMouseEnter()
+    {
+        mcS.setToCursor1();
+    }
+
+    void OnMouseExit()
+    {
+        mcS.setToDefaultCursor();
     }
 }

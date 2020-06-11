@@ -45,14 +45,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: AudioTest
-    clip: {fileID: 8300000, guid: 906ea990ac1b2a34d851e5f7bd860c87, type: 3}
+    clip: {fileID: 8300000, guid: e9386f1a46346aa4e8d7e2fcf205a6ad, type: 3}
     volume: 0.535
-    pitch: 0.1
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: StartMusic
     clip: {fileID: 8300000, guid: e42e6c9dd3a34074eaf8e4e2947465ac, type: 3}
-    volume: 1
-    pitch: 1.5
+    volume: 0.003
+    pitch: 1
     loop: 1
     source: {fileID: 0}
