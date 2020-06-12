@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InventoryScriptUI : MonoBehaviour
 {
-    bool isOpen = false;
+    public bool isOpen = false;
     public Canvas uiCanvas;
     void Start()
     {

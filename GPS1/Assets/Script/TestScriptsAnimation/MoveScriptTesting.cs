@@ -7,6 +7,7 @@ public class MoveScriptTesting : MonoBehaviour
     public float Speeds; //Speeds of character
     [SerializeField] Transform target = null;
     private MouseCursor mcS;
+    private InventoryScriptUI inventoryUI;
     Vector3 targetPos;
     bool isMoving = false;
     bool isPlayed = false;
@@ -17,18 +18,24 @@ public class MoveScriptTesting : MonoBehaviour
     {
         targetPos = transform.position;
         mcS = GameObject.FindGameObjectWithTag("Cursor").GetComponent<MouseCursor>();
+        inventoryUI = GameObject.FindGameObjectWithTag("InventoryUI").GetComponent<InventoryScriptUI>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Speeds);
-        Debug.Log(isMoving);
         animator.SetFloat("Speed", Mathf.Abs(Speeds));
 
         if (Input.GetMouseButtonDown(0))
         {
-            SetPosition();
+            if(inventoryUI.isOpen == false)
+            {
+                SetPosition();
+            }
+            else
+            {
+                Debug.Log("Inventory is open");
+            }
         }
         if (isMoving == true)
         {
