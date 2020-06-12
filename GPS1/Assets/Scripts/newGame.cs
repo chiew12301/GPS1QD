@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Global
 {
-    public static int state = 2;
+    public static int state = 0;
     //0 = New Game
     //1 = Happy ending
     //2 = Bad Ending
@@ -12,6 +12,7 @@ public class Global
 }
 public class newGame : MonoBehaviour
 {
+    public string firstScene;
     public Animator transition;
     public float transitionTime;
     // Start is called before the first frame update
@@ -20,7 +21,7 @@ public class newGame : MonoBehaviour
     // Update is called once per frame
     public void newStart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(firstScene);
     }
 
     IEnumerator LoadLevel()
@@ -29,6 +30,6 @@ public class newGame : MonoBehaviour
 
         yield return new WaitForSeconds(transitionTime);
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(firstScene);
     }
 }
