@@ -6,7 +6,7 @@ public class MoveScriptTesting : MonoBehaviour
 {
     public float Speeds; //Speeds of character
     [SerializeField] Transform target = null;
-    public MouseCursor mcS;
+    private MouseCursor mcS;
     Vector3 targetPos;
     bool isMoving = false;
     bool isPlayed = false;
@@ -16,6 +16,7 @@ public class MoveScriptTesting : MonoBehaviour
     void Start()
     {
         targetPos = transform.position;
+        mcS = GameObject.FindGameObjectWithTag("Cursor").GetComponent<MouseCursor>();
     }
 
     // Update is called once per frame
