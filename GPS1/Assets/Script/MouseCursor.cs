@@ -5,7 +5,7 @@ using UnityEngine;
 public class MouseCursor : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Texture2D normalCursor;
+    public Texture2D DefaultCursor;
     public Texture2D Cursor1;
 
     void Start()
@@ -21,7 +21,7 @@ public class MouseCursor : MonoBehaviour
 
     public void setToDefaultCursor()
     {
-        Cursor.SetCursor(normalCursor, Vector2.zero, CursorMode.ForceSoftware);
+        Cursor.SetCursor(DefaultCursor, Vector2.zero, CursorMode.ForceSoftware);
     }
 
     public void setToCursor1()

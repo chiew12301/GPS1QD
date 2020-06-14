@@ -94,5 +94,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cc0dae4f5d50ee4ab08a5dd4ea34939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalCursor: {fileID: 2800000, guid: 114f63be57fac7842adbfa16c6d1f523, type: 3}
+  DefaultCursor: {fileID: 2800000, guid: 114f63be57fac7842adbfa16c6d1f523, type: 3}
   Cursor1: {fileID: 2800000, guid: ae6a93768a16be84fa140495e4e7389a, type: 3}

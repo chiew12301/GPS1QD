@@ -52,7 +52,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: StartMusic
     clip: {fileID: 8300000, guid: e42e6c9dd3a34074eaf8e4e2947465ac, type: 3}
-    volume: 0.003
+    volume: 0.31
     pitch: 1
     loop: 1
     source: {fileID: 0}

@@ -4,42 +4,67 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
-    private Inventory Pinventory;
     public GameObject itemButton;
-
+    public Item item;
     private MouseCursor mcS;
+    public MoveScriptTesting player;
+    private float Distance;
+    public bool MouseisIn = false;
     void Start()
     {
-        Pinventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
         mcS = GameObject.FindGameObjectWithTag("Cursor").GetComponent<MouseCursor>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<MoveScriptTesting>();
+        player.OnPressLeftClick += OnPressLeftClick_Test;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Update()
     {
-        if(collision.CompareTag("Player"))
-        {
-            for(int i = 0; i < Pinventory.slots.Length; i++)
-            {
-                if(Pinventory.isFilled[i] == false)
-                {
-                    //Add item
-                    Pinventory.isFilled[i] = true;
-                    Instantiate(itemButton, Pinventory.slots[i].transform, false);
-                    Destroy(gameObject);
-                    break;
-                }
-            }
-        }
+        calDistance(player.gameObject);
+    }
+
+    public void performPickup()
+    {
+        Inventory.instance.addItem(item);
+        player.OnPressLeftClick -= OnPressLeftClick_Test;
+        mcS.setToDefaultCursor();
+        Destroy(transform.gameObject);
+        DontDestroyOnLoad(gameObject);
+    }
+    public float calDistance(GameObject playerObject)
+    {
+        Distance = Vector2.Distance(this.gameObject.transform.position, playerObject.transform.position);
+        return Distance;
     }
 
     void OnMouseEnter()
     {
+        Debug.Log("Mouse is in");
         mcS.setToCursor1();
+        MouseisIn = true;
+    }
+
+    private void OnPressLeftClick_Test(bool f)
+    {
+        if (f == true)
+        {
+            if (calDistance(player.gameObject) <= 3 && MouseisIn == true)
+            {
+                Debug.Log("Done");
+                performPickup();
+            }
+            else
+            {
+                Debug.Log("Not clicking or not in range");
+                return;
+            }
+
+        }
     }
 
     void OnMouseExit()
     {
         mcS.setToDefaultCursor();
+        MouseisIn = false;
     }
 
 }

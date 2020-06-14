@@ -11,12 +11,11 @@ GameObject:
   - component: {fileID: 8513774114941369377}
   - component: {fileID: 8513774114941369376}
   - component: {fileID: 8513774114941369407}
-  - component: {fileID: 8513774114941369406}
   - component: {fileID: 4393088932361534982}
   - component: {fileID: 8127966393674083685}
   m_Layer: 0
   m_Name: Book
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,8 +72,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 1ed13215f51284544a37a3eaaed7cdd4, type: 3}
+  m_SortingOrder: 4
+  m_Sprite: {fileID: 21300000, guid: ec4ce037783b6144580f7269500b871b, type: 3}
   m_Color: {r: 0.7169812, g: 0.429997, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,7 +101,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.72, y: 0.72}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -111,22 +110,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &8513774114941369406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8513774114941369405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0071a5f07c607b94b9ad7b5031592816, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemSprite: {fileID: 21300000, guid: 1ed13215f51284544a37a3eaaed7cdd4, type: 3}
-  name: Book
-  desc: I'm a Book
-  isFull: 0
 --- !u!114 &4393088932361534982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +124,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemButton: {fileID: 3354541868181024713, guid: 0a1973c4530c7034e893fc72b0d76aeb,
     type: 3}
+  item: {fileID: 11400000, guid: 5a6962f2812f9954da8691bb50d37b59, type: 2}
+  player: {fileID: 1346889373, guid: c19a4cfa4008cd449880bb23e939ad39, type: 3}
+  MouseisIn: 0
 --- !u!50 &8127966393674083685
 Rigidbody2D:
   serializedVersion: 4
