@@ -1,0 +1,20 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+[CreateAssetMenu(fileName = "New Dialogue", menuName ="Dialogues")]
+public class Dialogue : ScriptableObject
+{
+    [System.Serializable]
+    public class Info
+    {
+        public string name;
+        public Sprite portrait;
+        [TextArea(1, 10)]
+        public string sentences;
+    }
+
+    [Header("Write down the dialogues in the scene below")]
+    public Info[] dialogueInfo;
+}
