@@ -10,25 +10,25 @@ public class JournalScript : MonoBehaviour
 
     public GameObject pauseMenuUI;
 
-    public GameObject FirstNote;
-    public GameObject SecondNote;
-    public GameObject ThirdNote;
+    public GameObject []Notes;
 
-
+    [Header("Notes")]
     public Button JournalButton;
     public Button PrevButton;
     public Button NextButton;
 
+    [Header("Pages")]
     public GameObject PrevPage;
     public GameObject NextPage;
     private int Page = 1;
 
-    //Journal Tabs
+    [Header("Note Tabs")]    //Journal Tabs
     public GameObject NoteDetails;
     public GameObject NoteTab;
     public GameObject NoteTabBig;
     public Button NoteTabSmall;
 
+    [Header("Setting Tabs")]    //Journal Tabs
     public GameObject SettingsDetails;
     public GameObject SettingsTab;
     public GameObject SettingsTabBig;
@@ -56,8 +56,8 @@ public class JournalScript : MonoBehaviour
         Time.timeScale = 0f;
         GameisPaused = true;
 
-        FirstNote.SetActive(true);
-        SecondNote.SetActive(false);
+        Notes[0].SetActive(true);
+        Notes[1].SetActive(false);
 
         //PrevButton.Select();
         JournalButton.interactable = false;
@@ -79,19 +79,19 @@ public class JournalScript : MonoBehaviour
     public void Note_1()
     {
         ResetNotes();
-        FirstNote.SetActive(true);
+        Notes[0].SetActive(true);
     }
 
     public void Note_2()
     {
         ResetNotes();
-        SecondNote.SetActive(true);
+        Notes[1].SetActive(true);
     }
 
     public void Note_3()
     {
         ResetNotes();
-        ThirdNote.SetActive(true);
+        Notes[2].SetActive(true);
     }
 
     public void OpenSettings()
@@ -163,8 +163,8 @@ public class JournalScript : MonoBehaviour
 
     private void ResetNotes()
     {
-        FirstNote.SetActive(false);
-        SecondNote.SetActive(false);
-        ThirdNote.SetActive(false);
+        Notes[0].SetActive(false);
+        Notes[1].SetActive(false);
+        Notes[2].SetActive(false);
     }
 }
