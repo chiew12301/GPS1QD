@@ -13,6 +13,7 @@ public class Dialogue : ScriptableObject
         public Sprite portrait;
         [TextArea(1, 10)]
         public string sentences;
+        public bool isJitter;
     }
 
     [Header("Write down the dialogues in the scene below")]

@@ -1,10 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-[System.Serializable]
-public class BubbleSpeech
+[CreateAssetMenu(fileName = "New Bubble", menuName = "Bubbles")]
+public class BubbleSpeech : ScriptableObject
 {
-    [TextArea(1, 10)]
-    public string[] sentences;
+    [System.Serializable]
+    public class Info
+    {
+        [TextArea(1, 10)]
+        public string sentences;
+        public bool isJitter;
+    }
+    [Header("Write down the bubble speech below")]
+    public Info[] bubbleInfo;
 }

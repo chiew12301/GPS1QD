@@ -15,10 +15,13 @@ MonoBehaviour:
   dialogueInfo:
   - name: Max
     portrait: {fileID: 21300000, guid: 442f78cbca569cd4289585828e03b985, type: 3}
-    sentences: Huh? Did I just...faint?
+    sentences: Huh? Did I just...<color=blue>faint</color>?
+    isJitter: 1
   - name: Shadow
     portrait: {fileID: 21300000, guid: 58a0a816b706de1489167c950422a9ea, type: 3}
-    sentences: This is a long sentence to test the slow type display.
+    sentences: This is a {sound}long sentence to test the slow type display.
+    isJitter: 0
   - name: ITS AN EGG
     portrait: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
     sentences: Take 2. This is a long sentence to test the slow type display.
+    isJitter: 1

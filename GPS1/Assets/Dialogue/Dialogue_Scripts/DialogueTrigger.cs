@@ -6,6 +6,7 @@ public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
     public BubbleSpeech bubble;
+    public BubbleSpeech changedBubble;
 
     public void TriggerDialogue()
     {
@@ -15,5 +16,9 @@ public class DialogueTrigger : MonoBehaviour
     public void TriggerBubble()
     {
         FindObjectOfType<DialogueManager>().StartBubble(bubble);
+    }
+    public void TriggerChangedBubble()
+    {
+        FindObjectOfType<DialogueManager>().StartBubble(changedBubble);
     }
 }
