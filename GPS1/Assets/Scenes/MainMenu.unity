@@ -351,6 +351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfbad148735d85e4b8a0dfa36fd01044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  curState: 0
   newGame: {fileID: 21300000, guid: 5002d2ced6579ac46a6ffca3f22e9285, type: 3}
   goodEnding: {fileID: 21300000, guid: d790b230002736f4996751bfcffc6bff, type: 3}
   badEnding: {fileID: 21300000, guid: adc1e2a235806744faee5b188fe79f45, type: 3}
@@ -1559,6 +1560,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad67688d50f8425428883be17b92cda2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstScene: Scene1
+  firstScene: MasterScene
   transition: {fileID: 608201951}
-  transitionTime: 3

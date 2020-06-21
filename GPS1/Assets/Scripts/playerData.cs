@@ -6,13 +6,12 @@ using UnityEngine;
 [System.Serializable]
 public class playerData
 {
-    public int curScene;
     public float[] position;
+    //Inventory array etc
     
 
     public playerData(Player player)
     {
-        curScene = player.curScene;
 
         position = new float[3];
         position[0] = player.transform.position.x;

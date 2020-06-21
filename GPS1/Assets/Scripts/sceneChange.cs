@@ -7,31 +7,51 @@ using UnityEngine.SceneManagement;
 public class sceneChange : MonoBehaviour
 {
     public Animator transition;
-    public float transitionTime;
+    private float transitionTime = 1.0f;
     private doorTouch door;
-    public string levelName;
+    public GameObject designatedDoor;
+    private GameObject player = null;
+    private Vector3 newLocation;
+    public string doorName;
 
     private void Start()
     {
-        GameObject d = GameObject.FindGameObjectWithTag("Trigger");
+        GameObject d = GameObject.Find(doorName);
         door = d.GetComponent<doorTouch>();
+        player = GameObject.Find("Player");
+        newLocation.x = designatedDoor.transform.position.x;
+        newLocation.y = designatedDoor.transform.position.y;
 
     }
-    public void changeScene()
+
+    private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.KeypadEnter))
+        {
+            Debug.Log(player.transform.position.x);
+        }
+        
+    }
+    public void changeArea()
+    {
+        
         if (door.playerTouch)
         {
-            StartCoroutine(LoadLevel());
+            transition.SetTrigger("Start");  
+            StartCoroutine(LoadArea());
+            
+            
         }
     }
 
-    IEnumerator LoadLevel()
+    IEnumerator LoadArea()
     {
-        transition.SetTrigger("Start");
+
 
         yield return new WaitForSeconds(transitionTime);
 
-        SceneManager.LoadScene(levelName);
+        player.transform.position = new Vector3(newLocation.x,newLocation.y);
+        
     }
 
 }

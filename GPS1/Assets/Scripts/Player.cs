@@ -5,35 +5,45 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    public int curScene;
-    private bool loaded = false;
     Vector3 loadPosition;
+    private bool loadedYet = true;
     //private savePointTouch bench;
-    private void Start()
+    //public string savePointName;
+
+    void Start()
     {
-        curScene = SceneManager.GetActiveScene().buildIndex;
-        //GameObject savePoint = GameObject.FindGameObjectWithTag("Trigger");
+        //GameObject savePoint = GameObject.FindGameObjectWithTag(" ");
         //bench = savePoint.GetComponent<savePointTouch>();
 
-        if (loaded)
+    }
+
+    void Update()
+    {
+        //if (loadedYet)
+        //{
+        //    Debug.Log(loadedYet);
+        //}
+        if (loadedYet == false && transform.position.x != loadPosition.x)
         {
-            transform.position = loadPosition;
+            transform.position = new Vector3(loadPosition.x, loadPosition.y);
+            Debug.Log("something happens");
+            //loadedYet = true;
         }
     }
 
     public void savePlayer()
     {
-        saveSystem.Save(this);
+        saveSystem.Save(this);       
     }
 
     public void loadPlayer()
     {
+        loadedYet = false;
         playerData data = saveSystem.Load();
-        loaded = true;
         loadPosition.x = data.position[0];
         loadPosition.y = data.position[1];
-        loadPosition.z = data.position[2];
-        Debug.LogError("It works");
-        SceneManager.LoadScene(data.curScene);
+        Debug.Log(loadedYet);
+        SceneManager.LoadScene("MasterScene");
+        Debug.Log(loadedYet);
     }
 }

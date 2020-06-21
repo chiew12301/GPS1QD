@@ -12,6 +12,14 @@ public class doorTouch : MonoBehaviour
         playerTouch = false;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            Debug.Log(playerTouch);
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
