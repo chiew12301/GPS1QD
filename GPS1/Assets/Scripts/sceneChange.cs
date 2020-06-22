@@ -34,13 +34,13 @@ public class sceneChange : MonoBehaviour
     }
     public void changeArea()
     {
-        
+
         if (door.playerTouch)
         {
-            transition.SetTrigger("Start");  
+            transition.SetTrigger("Start");
             StartCoroutine(LoadArea());
-            
-            
+            Debug.Log("it works");
+
         }
     }
 
